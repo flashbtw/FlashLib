@@ -1,7 +1,7 @@
 name: FlashLib
 version: '${project.version}'
-main: de.flashyboi.minecraft.plugins.flashlib.FlashLib
-api-version: 1.18
+main: io.github.flashbtw.FlashLib
+api-version: 1.17
 prefix: FlashLib
 authors: [ flash_btw ]
 description: Library for flash_btw's plugins

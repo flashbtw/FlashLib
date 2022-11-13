@@ -1,6 +1,7 @@
 package io.github.flashbtw.util;
 
 import io.github.flashbtw.enums.ConfigActions;
+import org.apache.commons.lang.ObjectUtils;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
@@ -22,6 +23,31 @@ public abstract class ConfigUtility {
                     return null;
             }
 
+        } catch (NullPointerException npe) {
+            npe.printStackTrace();
+            return null;
+        }
+    }
+
+    public String getString(@NotNull ConfigActions cfgAction, @NotNull String path) {
+        try {
+            return action(cfgAction, path, String.class);
+        } catch (NullPointerException npe) {
+            npe.printStackTrace();
+            return null;
+        }
+    }
+    public Integer getInteger(@NotNull ConfigActions cfgAction, String path) {
+        try {
+            return action(cfgAction, path, Integer.class);
+        } catch (NullPointerException npe) {
+            npe.printStackTrace();
+            return null;
+        }
+    }
+    public Boolean getBoolean(@NotNull ConfigActions cfgAction, String path) {
+        try {
+            return action(cfgAction, path, Boolean.class);
         } catch (NullPointerException npe) {
             npe.printStackTrace();
             return null;
