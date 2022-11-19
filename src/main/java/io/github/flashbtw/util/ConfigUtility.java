@@ -29,25 +29,25 @@ public abstract class ConfigUtility {
         }
     }
 
-    public String getString(@NotNull ConfigActions cfgAction, @NotNull String path) {
+    public String getString(@NotNull String path) {
         try {
-            return action(cfgAction, path, String.class);
+            return action(ConfigActions.GET_VALUE, path, String.class);
         } catch (NullPointerException npe) {
             npe.printStackTrace();
             return null;
         }
     }
-    public Integer getInteger(@NotNull ConfigActions cfgAction, String path) {
+    public Integer getInteger(@NotNull String path) {
         try {
-            return action(cfgAction, path, Integer.class);
+            return action(ConfigActions.GET_VALUE, path, Integer.class);
         } catch (NullPointerException npe) {
             npe.printStackTrace();
             return null;
         }
     }
-    public Boolean getBoolean(@NotNull ConfigActions cfgAction, String path) {
+    public Boolean getBoolean(@NotNull String path) {
         try {
-            return action(cfgAction, path, Boolean.class);
+            return action(ConfigActions.GET_VALUE, path, Boolean.class);
         } catch (NullPointerException npe) {
             npe.printStackTrace();
             return null;
